@@ -19,8 +19,8 @@ public class StepVerifierTest {
 
     @Test
     void test2() {
-        Account andrew = new Account("andrew", 32);
-        Account mona = new Account("mona", 30);
+        Account andrew = new Account(1L ,"andrew", 32);
+        Account mona = new Account(2L, "mona", 30);
 
         insertAccounts(andrew, mona)
             .as(StepVerifier::create)
@@ -32,8 +32,8 @@ public class StepVerifierTest {
 
     @Test
     void test3() {
-        Account andrew = new Account("andrew", 32);
-        Account mona = new Account("mona", 30);
+        Account andrew = new Account(1L, "andrew", 32);
+        Account mona = new Account(2L,"mona", 30);
 
         insertAccounts(andrew, mona)
             .as(StepVerifier::create)
