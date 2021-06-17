@@ -5,6 +5,8 @@ import lombok.Getter;
 @Getter
 public class Account {
 
+    private final static String NAME = "HELLO";
+
     private final Long id;
     private final String name;
     private final int age;
