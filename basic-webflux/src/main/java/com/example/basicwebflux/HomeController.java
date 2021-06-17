@@ -12,6 +12,9 @@ public class HomeController {
         System.out.println("test");
         System.out.println("test");
         System.out.println("test");
+        System.out.println("test");
+        System.out.println("test1");
+
         return "hello world";
     }
 
