@@ -13,6 +13,8 @@
     <module>basic-webflux</module>
     <module>basic-java</module>
     <module>java-design-pattern</module>
+    <module>webflux-r2dbc-starter</module>
+    <module>junit5-starter</module>
   </modules>
 
 </project>
