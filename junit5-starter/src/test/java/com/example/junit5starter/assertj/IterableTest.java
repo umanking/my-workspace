@@ -3,15 +3,24 @@ package com.example.junit5starter.assertj;
 import static org.assertj.core.api.Assertions.as;
 import static org.assertj.core.api.Assertions.in;
 import static org.assertj.core.api.Assertions.notIn;
+import static org.assertj.core.api.Assertions.tuple;
+import static org.assertj.core.api.Assertions.useRepresentation;
 import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
 import static org.assertj.core.api.InstanceOfAssertFactories.STRING;
 
 import com.example.junit5starter.User;
 import java.util.List;
+import java.util.stream.Collectors;
+import org.assertj.core.api.Condition;
 import org.junit.jupiter.api.Test;
+import org.springframework.boot.autoconfigure.web.ConditionalOnEnabledResourceChain;
 
 public class IterableTest extends Fixtures {
 
+
+    /**
+     * chceck iterable contents(contains) test
+     */
     @Test
     void iterable_contents_test() {
         List<String> list = List.of("1", "1", "2", "3");
@@ -31,6 +40,9 @@ public class IterableTest extends Fixtures {
 
     }
 
+    /**
+     * verify element test (satisfy, match)
+     */
     @Test
     void element_satisfy_test() {
         List<User> users = getUsers();
@@ -63,6 +75,9 @@ public class IterableTest extends Fixtures {
             .anyMatch(user -> user.getAge() > 25);
     }
 
+    /**
+     * navigating to given element test
+     */
     @Test
     void navigating_element_test() {
         List<User> users = getUsers();
@@ -84,6 +99,9 @@ public class IterableTest extends Fixtures {
             .isEqualTo(andrew());
     }
 
+    /**
+     * filtering element test
+     */
     @Test
     void filter_test() {
         List<User> users = getUsers();
@@ -101,5 +119,87 @@ public class IterableTest extends Fixtures {
 
         assertThat(users).filteredOn("name", notIn("mike", "nu"))
             .containsOnly(andrew(), sam(), betty());
+
+        // Property 를 메서드 레퍼런스로 표현가능하지만, not, in, notIn 오퍼레이터는 사용불가함
+        assertThat(users)
+            .filteredOn(User::getName, "andrew")
+            .filteredOn(User::getAge, 32)
+            .containsOnly(andrew());
+
+
+        // null value 값을 찾는다.
+        assertThat(users).filteredOnNull("name").isEmpty();
+
+    }
+
+    @Test
+    void filtering_matching_given_assertion_test() {
+        List<User> users = getUsers();
+
+        assertThat(users).filteredOnAssertions(user -> {
+            assertThat(user.getAge()).isGreaterThanOrEqualTo(25);
+        }).containsOnly(sam(), andrew());
+    }
+
+    @Test
+    void filtering_condition_test() {
+        List<User> users = getUsers();
+        Condition<User> olderUser = new Condition<>(user -> user.getAge() >= 25, "olderUser");
+
+        assertThat(users).filteredOn(olderUser)
+            .containsOnly(andrew(), sam());
+
+        // Predicate로 그냥 넘겨서 람다식으로 작성하는게 더욱 편한듯
+        assertThat(users).filteredOn(user -> user.getAge() >= 25)
+            .containsOnly(andrew(), sam());
+    }
+
+    /**
+     *
+     */
+    @Test
+    void extracting_single_value_test() {
+        List<User> users = getUsers();
+        // wrong answer ❌ -------> extranct getNameList
+        List<String> collect = users.stream().map(User::getName).collect(Collectors.toList());
+        assertThat(collect).contains("andrew", "betty", "sam");
+
+        // correct answer 🟢
+        assertThat(users)
+            .extracting("name")
+            .contains("andrew", "betty", "sam");
+
+        // 람다 표현식 가능
+        assertThat(users)
+            .extracting(User::getName)
+            .contains("andrew", "betty", "sam");
+
+        // map으로 변환해서 가능
+        assertThat(users)
+            .map(User::getName)
+            .contains("andrew", "betty", "sam");
+
+        // 2번째 파라미터로 강력하게 타입을 지정해서 > 이렇게 할거면 람다표현식이 나은듯👍
+        assertThat(users)
+            .extracting("name", String.class)
+            .contains("andrew", "betty", "sam");
+    }
+
+    @Test
+    void extracting_multiple_values_test() {
+
+        List<User> users = getUsers();
+
+        assertThat(users).extracting("name", "age")
+            .contains(tuple("andrew", 32),
+                tuple("betty", 20),
+                tuple("sam", 25)
+            );
+
+        assertThat(users).extracting(User::getName, User::getAge)
+            .contains(tuple("andrew", 32),
+                tuple("betty", 20),
+                tuple("sam", 25)
+            );
     }
 }
