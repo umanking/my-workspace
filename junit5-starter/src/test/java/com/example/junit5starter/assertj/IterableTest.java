@@ -10,7 +10,7 @@ import com.example.junit5starter.User;
 import java.util.List;
 import org.junit.jupiter.api.Test;
 
-public class IterableTest {
+public class IterableTest extends Fixtures {
 
     @Test
     void iterable_contents_test() {
@@ -52,22 +52,6 @@ public class IterableTest {
         assertThat(users).noneSatisfy(user -> {
             assertThat(user.getName()).isEqualTo("BTS");
         });
-    }
-
-    private List<User> getUsers() {
-        return List.of(andrew(), betty(), sam());
-    }
-
-    private User sam() {
-        return new User("sam", 25);
-    }
-
-    private User betty() {
-        return new User("betty", 20);
-    }
-
-    private User andrew() {
-        return new User("andrew", 32);
     }
 
     @Test
