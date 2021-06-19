@@ -1,21 +1,19 @@
 package com.example.junit5starter.assertj;
 
-import static org.assertj.core.api.Assertions.as;
 import static org.assertj.core.api.Assertions.in;
 import static org.assertj.core.api.Assertions.notIn;
 import static org.assertj.core.api.Assertions.tuple;
-import static org.assertj.core.api.Assertions.useRepresentation;
 import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
-import static org.assertj.core.api.InstanceOfAssertFactories.STRING;
 
 import com.example.junit5starter.User;
+import com.example.junit5starter.User.Order;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 import org.assertj.core.api.Condition;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.autoconfigure.web.ConditionalOnEnabledResourceChain;
 
-public class IterableTest extends Fixtures {
+public class IterableAssertionsTest extends Fixtures {
 
 
     /**
@@ -87,8 +85,6 @@ public class IterableTest extends Fixtures {
         assertThat(users).first().isEqualTo(andrew());
         assertThat(users).element(1).isEqualTo(betty());
         assertThat(users).last().isEqualTo(sam());
-
-        assertThat(users).first(as(STRING)).startsWith("User");
     }
 
     @Test
@@ -187,7 +183,6 @@ public class IterableTest extends Fixtures {
 
     @Test
     void extracting_multiple_values_test() {
-
         List<User> users = getUsers();
 
         assertThat(users).extracting("name", "age")
@@ -201,5 +196,29 @@ public class IterableTest extends Fixtures {
                 tuple("betty", 20),
                 tuple("sam", 25)
             );
+    }
+
+    @Test
+    void extracting_flatMap_extracting_value_test() {
+        User andrew = new User("andrew", 32, List.of(
+            new Order("선풍기", 30_000),
+            new Order("책장", 80_000))
+        );
+
+        Order order = new Order("선풍기", 30_000);
+
+        List<User> users = List.of(andrew);
+        assertThat(users).flatExtracting(User::getOrders)
+            .contains(order);
+
+        assertThat(users).flatExtracting("orders")
+            .contains(order);
+    }
+
+    @Test
+    void comparing_element_specific_comparator_test() {
+        List<User> users = getUsers();
+        assertThat(users).usingElementComparator(
+            Comparator.comparing(User::getRoleType)).contains(andrew());
     }
 }
