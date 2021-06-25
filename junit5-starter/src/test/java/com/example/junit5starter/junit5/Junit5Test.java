@@ -12,7 +12,6 @@ import org.junit.jupiter.params.provider.CsvFileSource;
 import org.junit.jupiter.params.provider.EmptySource;
 import org.junit.jupiter.params.provider.EnumSource;
 import org.junit.jupiter.params.provider.EnumSource.Mode;
-import org.junit.jupiter.params.provider.MethodSource;
 import org.junit.jupiter.params.provider.NullAndEmptySource;
 import org.junit.jupiter.params.provider.NullSource;
 
@@ -86,5 +85,4 @@ public class Junit5Test {
     void csv_file_test(String firstColumn, String secondColumn) {
         assertThat(firstColumn.toUpperCase()).isEqualTo(secondColumn);
     }
-
 }
