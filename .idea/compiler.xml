@@ -12,13 +12,14 @@
         <module name="spring-thymeleaf" />
         <module name="junit5-starter" />
         <module name="spring-rabbitmq" />
-        <module name="spring-rest-api" />
         <module name="java-design-pattern" />
+        <module name="taco-cloud" />
+        <module name="basic-kotlin" />
+        <module name="spring-rest-api" />
         <module name="webflux-r2dbc-starter" />
         <module name="spring-batch" />
-        <module name="taco-cloud" />
         <module name="basic-java" />
-        <module name="basic-kotlin" />
+        <module name="spring-redis" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -36,6 +37,7 @@
       <module name="spring-batch" options="-parameters" />
       <module name="spring-data-jpa" options="-parameters" />
       <module name="spring-rabbitmq" options="-parameters" />
+      <module name="spring-redis" options="-parameters" />
       <module name="spring-rest-api" options="-parameters" />
       <module name="spring-thymeleaf" options="-parameters" />
       <module name="spring-webflux" options="-parameters" />

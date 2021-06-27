@@ -22,6 +22,7 @@
     <module>spring-data-jpa</module>
     <module>spring-batch</module>
     <module>spring-rabbitmq</module>
+    <module>spring-redis</module>
   </modules>
 
 </project>
