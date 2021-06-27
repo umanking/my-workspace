@@ -17,6 +17,7 @@
     <module>junit5-starter</module>
     <module>spring-rest-api</module>
     <module>taco-cloud</module>
+    <module>spring-thymeleaf</module>
   </modules>
 
 </project>

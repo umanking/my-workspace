@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Item List</title>
+</head>
+<body>
+<h1>Item List</h1>
+<table>
+  <thead>
+  <th>아이템</th>
+  <th>가격</th>
+  </thead>
+  <tbody>
+  <tr th:each="item, iter:${items}">
+    <td th:text="${item.name}" th:value="${iter.index}">이름값이 없습니다.</td>
+    <td th:text="${item.price}" th:value="${iter.index}">가격정보 없습니다.</td>
+  </tr>
+  </tbody>
+</table>
+
+<span>총 아이템: <div th:text="${#lists.size(items)}"></div>
+</span>
+<p></p>
+<p></p>
+
+
+<!--if else -->
+<th:block th:if="${isPurchased}">
+  <div>구매함</div>
+</th:block>
+<th:block th:if="!${isPurchased}">
+  <div>구매하지 않음</div>
+</th:block>
+
+
+<p></p>
+<p></p>
+
+<!--switch case-->
+
+<th:block th:switch="${itemStatus}">
+  <div th:case="1" th:text="success"></div>
+  <div th:case="2" th:text="fail"></div>
+  <div th:case="3" th:text="pending"></div>
+</th:block>
+
+<!--계산식-->
+<div th:text="${#calendars.format(#calendars.createNow(), 'yyyy-MM-dd HH:mm')}"></div>
+
+<!--numbers.sequence-->
+<ul th:each="num: ${#numbers.sequence(1,5)}">
+  <li th:text="${num}"></li>
+</ul>
+
+<div th:object="${userInfo.user}">
+  <div th:text="*{firstName}"></div>
+  <div th:text="*{lastName}"></div>
+  <div th:text="*{city}"></div>
+</div>
+
+<div th:text="${userInfo.user.city}"></div>
+<div th:text="|Welcome Home, ${userInfo.user.lastName}|"></div>
+<div th:text="'Welcome Home, '+ ${userInfo.user.lastName}"></div>
+
+</body>
+</html>
