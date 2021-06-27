@@ -26,7 +26,7 @@ public class IterableAssertionsTest extends Fixtures {
         // 포함되어 있니
         assertThat(list).contains("1", "2");
         // 중복된 값도 반영됨
-        assertThat(list).containsOnly("2","1","3");
+        assertThat(list).containsOnly("2", "1", "3");
         // 순서 까지 정확해야함
         assertThat(list).containsExactly("1", "1", "2", "3");
         // 순서 정확하지 않아도됨
@@ -120,7 +120,6 @@ public class IterableAssertionsTest extends Fixtures {
             .filteredOn(User::getName, "andrew")
             .filteredOn(User::getAge, 32)
             .containsOnly(andrew());
-
 
         // null value 값을 찾는다.
         assertThat(users).filteredOnNull("name").isEmpty();

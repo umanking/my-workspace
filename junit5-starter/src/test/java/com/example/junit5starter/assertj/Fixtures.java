@@ -9,7 +9,7 @@ public class Fixtures {
     protected List<User> getUsers() {
         // age 순, desc  andrew > sam > betty
         // name순, acs andrew, betty, sam
-        return List.of(betty(), andrew(),sam());
+        return List.of(betty(), andrew(), sam());
     }
 
     protected User sam() {

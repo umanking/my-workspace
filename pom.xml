@@ -18,6 +18,7 @@
     <module>spring-rest-api</module>
     <module>taco-cloud</module>
     <module>spring-thymeleaf</module>
+    <module>spring-data-jpa</module>
   </modules>
 
 </project>

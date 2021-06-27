@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="spring-webflux" />
+        <module name="spring-data-jpa" />
         <module name="spring-thymeleaf" />
         <module name="junit5-starter" />
         <module name="spring-rest-api" />
@@ -26,6 +27,7 @@
       <module name="basic-java" options="-parameters" />
       <module name="java-design-pattern" options="-parameters" />
       <module name="junit5-starter" options="-parameters" />
+      <module name="spring-data-jpa" options="-parameters" />
       <module name="spring-rest-api" options="-parameters" />
       <module name="spring-thymeleaf" options="-parameters" />
       <module name="spring-webflux" options="-parameters" />
