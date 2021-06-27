@@ -14,6 +14,7 @@
         <module name="spring-rest-api" />
         <module name="java-design-pattern" />
         <module name="webflux-r2dbc-starter" />
+        <module name="spring-batch" />
         <module name="taco-cloud" />
         <module name="basic-java" />
       </profile>
@@ -27,6 +28,7 @@
       <module name="basic-java" options="-parameters" />
       <module name="java-design-pattern" options="-parameters" />
       <module name="junit5-starter" options="-parameters" />
+      <module name="spring-batch" options="-parameters" />
       <module name="spring-data-jpa" options="-parameters" />
       <module name="spring-rest-api" options="-parameters" />
       <module name="spring-thymeleaf" options="-parameters" />

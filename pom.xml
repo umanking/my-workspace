@@ -19,6 +19,7 @@
     <module>taco-cloud</module>
     <module>spring-thymeleaf</module>
     <module>spring-data-jpa</module>
+    <module>spring-batch</module>
   </modules>
 
 </project>
