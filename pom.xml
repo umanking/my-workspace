@@ -10,7 +10,7 @@
   <packaging>pom</packaging>
 
   <modules>
-    <module>basic-webflux</module>
+    <module>spring-webflux</module>
     <module>basic-java</module>
     <module>java-design-pattern</module>
     <module>webflux-r2dbc-starter</module>
