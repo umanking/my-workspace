@@ -12,6 +12,7 @@
         <module name="spring-thymeleaf" />
         <module name="junit5-starter" />
         <module name="spring-rabbitmq" />
+        <module name="spring-kafka" />
         <module name="java-design-pattern" />
         <module name="taco-cloud" />
         <module name="basic-kotlin" />
@@ -36,6 +37,7 @@
       <module name="junit5-starter" options="-parameters" />
       <module name="spring-batch" options="-parameters" />
       <module name="spring-data-jpa" options="-parameters" />
+      <module name="spring-kafka" options="-parameters" />
       <module name="spring-rabbitmq" options="-parameters" />
       <module name="spring-redis" options="-parameters" />
       <module name="spring-rest-api" options="-parameters" />
