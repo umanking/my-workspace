@@ -16,7 +16,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 @SpringBootTest
 @ExtendWith(SpringExtension.class)
-public class RedisCRUDTests {
+public class RedisTemplateTest {
 
     @Resource(name = "redisTemplate")
     private ValueOperations<String, String> valueOperations;

@@ -1,4 +1,4 @@
-package com.example.springredis;
+package com.example.springredis.config;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
