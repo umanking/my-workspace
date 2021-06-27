@@ -12,6 +12,7 @@
   <modules>
     <module>spring-webflux</module>
     <module>basic-java</module>
+    <module>basic-kotlin</module>
     <module>java-design-pattern</module>
     <module>webflux-r2dbc-starter</module>
     <module>junit5-starter</module>

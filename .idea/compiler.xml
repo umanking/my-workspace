@@ -17,6 +17,7 @@
         <module name="spring-batch" />
         <module name="taco-cloud" />
         <module name="basic-java" />
+        <module name="basic-kotlin" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -26,6 +27,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="basic-java" options="-parameters" />
+      <module name="basic-kotlin" options="-parameters" />
       <module name="java-design-pattern" options="-parameters" />
       <module name="junit5-starter" options="-parameters" />
       <module name="spring-batch" options="-parameters" />
