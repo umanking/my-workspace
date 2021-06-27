@@ -16,6 +16,7 @@
     <module>webflux-r2dbc-starter</module>
     <module>junit5-starter</module>
     <module>spring-rest-api</module>
+    <module>taco-cloud</module>
   </modules>
 
 </project>
