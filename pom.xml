@@ -21,6 +21,7 @@
     <module>spring-thymeleaf</module>
     <module>spring-data-jpa</module>
     <module>spring-batch</module>
+    <module>spring-rabbitmq</module>
   </modules>
 
 </project>

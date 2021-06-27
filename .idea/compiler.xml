@@ -11,6 +11,7 @@
         <module name="spring-data-jpa" />
         <module name="spring-thymeleaf" />
         <module name="junit5-starter" />
+        <module name="spring-rabbitmq" />
         <module name="spring-rest-api" />
         <module name="java-design-pattern" />
         <module name="webflux-r2dbc-starter" />
@@ -22,16 +23,19 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="basicjava" target="1.5" />
+      <module name="demo" target="11" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="basic-java" options="-parameters" />
       <module name="basic-kotlin" options="-parameters" />
+      <module name="demo" options="-parameters" />
       <module name="java-design-pattern" options="-parameters" />
       <module name="junit5-starter" options="-parameters" />
       <module name="spring-batch" options="-parameters" />
       <module name="spring-data-jpa" options="-parameters" />
+      <module name="spring-rabbitmq" options="-parameters" />
       <module name="spring-rest-api" options="-parameters" />
       <module name="spring-thymeleaf" options="-parameters" />
       <module name="spring-webflux" options="-parameters" />
