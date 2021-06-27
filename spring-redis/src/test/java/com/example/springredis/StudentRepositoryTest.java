@@ -4,14 +4,14 @@ import com.example.springredis.entity.Student;
 import com.example.springredis.entity.Student.Gender;
 import com.example.springredis.repository.StudentRepository;
 import java.util.List;
-import java.util.Optional;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.Example;
 
 @SpringBootTest
-public class RedisStudentTest {
+public class StudentRepositoryTest {
 
     @Autowired
     StudentRepository studentRepository;
@@ -48,6 +48,7 @@ public class RedisStudentTest {
 
     //    잘안됨
     @Test
+    @DisplayName("Dynamic query 테스트")
     void queryMethodTest() {
         List<Student> students = studentRepository.findByName("Tom");
         System.out.println(students.size());
@@ -58,6 +59,7 @@ public class RedisStudentTest {
     }
 
     @Test
+    @DisplayName("Dynamic query 테스트")
     void queryByExamQueryTest() {
         Student student = new Student();
         student.setName("Tom");
