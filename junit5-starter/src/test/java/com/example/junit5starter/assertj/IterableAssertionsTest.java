@@ -69,8 +69,7 @@ public class IterableAssertionsTest extends Fixtures {
         List<User> users = getUsers();
 
         // Predicate를 파라미터로 받는다.
-        assertThat(users).allMatch(user -> user.getName().length() > 0)
-            .anyMatch(user -> user.getAge() > 25);
+        assertThat(users).allMatch(user -> user.getName().length() > 0);
     }
 
     /**
@@ -82,8 +81,8 @@ public class IterableAssertionsTest extends Fixtures {
 
         // element의 방향을 탐색하는것
         // 객체 간의 비교를 할때는 EqualsAndHashCode를 선언해줘야 한다
-        assertThat(users).first().isEqualTo(andrew());
-        assertThat(users).element(1).isEqualTo(betty());
+        assertThat(users).first().isEqualTo(betty());
+        assertThat(users).element(1).isEqualTo(andrew());
         assertThat(users).last().isEqualTo(sam());
     }
 

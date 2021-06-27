@@ -15,6 +15,7 @@
     <module>java-design-pattern</module>
     <module>webflux-r2dbc-starter</module>
     <module>junit5-starter</module>
+    <module>spring-rest-api</module>
   </modules>
 
 </project>
