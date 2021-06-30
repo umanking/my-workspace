@@ -1,4 +1,4 @@
-package com.example.basicjava.java8stream;
+package com.example.basicjava.java8stream.groupby;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -11,9 +11,10 @@ import lombok.Data;
 @Data
 @AllArgsConstructor
 public class BlogPost {
-    String title;
-    String author;
-    BlogPostType type;
+
+    private String title;
+    private String author;
+    private BlogPostType type;
     int likes;
 
 }
