@@ -1,4 +1,4 @@
-package com.example.basicjava.tobyReativeStream;
+package com.example.basicwebflux.tobyReativeStream;
 
 import java.util.concurrent.Callable;
 import lombok.extern.slf4j.Slf4j;

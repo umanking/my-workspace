@@ -1,4 +1,4 @@
-package com.example.basicjava.tobyReativeStream;
+package com.example.basicwebflux.tobyReativeStream;
 
 import java.util.Iterator;
 import java.util.stream.Collectors;

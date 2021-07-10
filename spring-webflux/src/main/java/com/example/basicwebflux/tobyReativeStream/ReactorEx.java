@@ -1,4 +1,4 @@
-package com.example.basicjava.tobyReativeStream;
+package com.example.basicwebflux.tobyReativeStream;
 
 import reactor.core.publisher.Flux;
 
