@@ -22,7 +22,6 @@ public class Container {
                 } catch (IllegalAccessException e) {
                     e.printStackTrace();
                 }
-
             }
         }
         return instance;
@@ -35,5 +34,4 @@ public class Container {
             throw new RuntimeException(e);
         }
     }
-
 }
