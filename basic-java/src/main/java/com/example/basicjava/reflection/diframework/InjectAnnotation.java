@@ -1,4 +1,4 @@
-package com.example.basicjava.reflection.annotation;
+package com.example.basicjava.reflection.diframework;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
