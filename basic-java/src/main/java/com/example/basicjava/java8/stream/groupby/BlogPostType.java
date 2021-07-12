@@ -1,4 +1,4 @@
-package com.example.basicjava.java8stream.groupby;
+package com.example.basicjava.java8.stream.groupby;
 
 /**
  * @author Geonguk Han

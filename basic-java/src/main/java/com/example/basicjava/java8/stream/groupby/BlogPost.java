@@ -1,4 +1,4 @@
-package com.example.basicjava.java8stream.groupby;
+package com.example.basicjava.java8.stream.groupby;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

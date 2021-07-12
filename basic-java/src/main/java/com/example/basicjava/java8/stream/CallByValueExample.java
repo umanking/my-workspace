@@ -1,4 +1,4 @@
-package com.example.basicjava.java8stream;
+package com.example.basicjava.java8.stream;
 
 /**
  * @author Geonguk Han

@@ -1,0 +1,43 @@
+package com.example.basicjava.reflection;
+
+import com.example.basicjava.reflection.annotation.MyCustomAnnotation;
+
+@MyCustomAnnotation
+public class Member {
+
+    private String name;
+    private int age;
+
+    public Member() {
+    }
+
+    public Member(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public void sayHello() {
+        System.out.println("hello world");
+    }
+
+    public void saySomething(String something) {
+        System.out.println("hello " + something);
+
+    }
+}
