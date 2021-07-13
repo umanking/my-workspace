@@ -20,8 +20,8 @@ public class SortEx {
 
         // Collections.sort 사용
         List<String> strings = Arrays.asList("betty", "andrew", "zen", "robert");
-//        Collections.sort(strings);
-//        System.out.println("strings = " + strings);
+        Collections.sort(strings);
+        System.out.println("strings = " + strings);
 
         List<String> result = strings.stream().sorted(String::compareTo).collect(Collectors.toList());
         System.out.println("result = " + result);
@@ -39,8 +39,6 @@ public class SortEx {
         System.out.println("users = " + users);
         System.out.println("collect = " + collect);
         System.out.println("collect1 = " + collect1);
-
-
     }
 
     private static int[] getInts() {
