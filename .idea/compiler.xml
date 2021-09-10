@@ -16,6 +16,7 @@
         <module name="java-design-pattern" />
         <module name="taco-cloud" />
         <module name="basic-kotlin" />
+        <module name="spring-core" />
         <module name="spring-rest-api" />
         <module name="webflux-r2dbc-starter" />
         <module name="spring-batch" />
@@ -36,6 +37,7 @@
       <module name="java-design-pattern" options="-parameters" />
       <module name="junit5-starter" options="-parameters" />
       <module name="spring-batch" options="-parameters" />
+      <module name="spring-core" options="-parameters" />
       <module name="spring-data-jpa" options="-parameters" />
       <module name="spring-kafka" options="-parameters" />
       <module name="spring-rabbitmq" options="-parameters" />
